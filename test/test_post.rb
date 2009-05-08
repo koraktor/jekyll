@@ -384,6 +384,15 @@ class TestPost < Test::Unit::TestCase
           assert_equal "<p>Post with a front matter time</p>\n<p>10 Jan 2010</p>", post.output
         end
 
+        should "import templates" do
+          setup do
+            post = setup_post("2009-05-08-import.markdown")
+            post.site.source = File.join(File.dirname(__FILE__), 'source')
+            do_render(post)
+
+            assert_equal "<<< <div class=\"import\"><p>This is imported.</p></div>\n<p>This is <em>even cooler</em></p> >>>", post.output
+          end
+        end
       end
     end
 

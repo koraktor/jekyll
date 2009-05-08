@@ -94,7 +94,7 @@ class TestSite < Test::Unit::TestCase
 
     should "read layouts" do
       @site.read_layouts
-      assert_equal ["default", "simple"].sort, @site.layouts.keys.sort
+      assert_equal ["default", "import", "simple"].sort, @site.layouts.keys.sort
     end
 
     should "read posts" do

@@ -1,0 +1,8 @@
+---
+layout: default
+title: Import
+---
+
+{% import with-layout.markdown %}
+
+This is _even cooler_
